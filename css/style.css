@@ -272,6 +272,7 @@ header .follow a:hover {
 
 .about .row-1 .content p span {
     color: var(--main-color);
+    font-weight: bold;
 }
 
 .about .row-1 .content .box-container {
