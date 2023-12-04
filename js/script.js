@@ -12,6 +12,7 @@ window.onscroll = () =>{
 }
 
 function sendEmail() {
+
     Email.send({
         SecureToken : "7c5adaf0-d746-4e3e-8e0d-781fd9aca7ce",
         To : 'sumit1708@outlook.com',
@@ -21,7 +22,20 @@ function sendEmail() {
                 + "<br> Email: " + document.getElementById("email").value
                 + "<br> Number: " + document.getElementById("number").value
                 + "<br> Message: " + document.getElementById("message").value
-    }).then(
+    });
+    /*.then(
       message => alert(message)
-    );
+    );*/
+
+    document.getElementById("name").value = ""
+    document.getElementById("email").value = ""
+    document.getElementById("number").value = ""
+    document.getElementById("message").value = ""
+}
+
+function toggle() {
+    var blur = document.getElementById('container')
+    blur.classList.toggle('active') 
+    var popup = document.getElementById("popup")
+    popup.classList.toggle('active') 
 }

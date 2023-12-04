@@ -45,9 +45,14 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0.5;
-    z-index: -2;
+    z-index: -3;
 }
 
+.container.active {
+    filter: blur(6rem);
+    pointer-events: none;
+    user-select: none;
+}
 
 .clouds {
     position: fixed;
@@ -330,19 +335,19 @@ header .follow a:hover {
 }
 
 .about .row-2 .skills .progress:nth-child(1) .bar span {
-    width: 95%;
-}
-
-.about .row-2 .skills .progress:nth-child(2) .bar span {
     width: 80%;
 }
 
+.about .row-2 .skills .progress:nth-child(2) .bar span {
+    width: 65%;
+}
+
 .about .row-2 .skills .progress:nth-child(3) .bar span {
-    width: 75%;
+    width: 60%;
 }
 
 .about .row-2 .skills .progress:nth-child(4) .bar span {
-    width: 85%;
+    width: 75%;
 }
 
 .about .row-2 .box-container {
@@ -588,7 +593,7 @@ header .follow a:hover {
 }
 
 .footer {
-    margin-top: 5rem;
+    /*margin-top: 5rem;*/
     font-size: 1.5rem;
     padding: 2.5rem;
     text-align: center;
@@ -600,7 +605,64 @@ header .follow a:hover {
 }
 
 
+.popup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60rem;
+    height: 30rem;
+    padding: 3rem;
+    box-shadow: 0 5px 30px rgb(0,0,0,0.30);
+    background: #494949;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 2000;
+}
 
+.popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.popup .btn {
+    width: 54rem;
+    margin-top: 0;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.popup .btn:hover {
+    background: var(--main-color);
+    color: #494949;
+    letter-spacing: .2rem;
+}
+
+.popup h3 {
+    margin-top: 3rem;
+    font-size: 4rem;
+    padding-bottom: 1rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.popup p {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.popup .tick {
+    width: 10rem;
+    position: absolute;
+    left: 25rem;
+    top: -5rem;
+}
 
 /* media queries  */
 @media (max-width:991px) {
@@ -660,6 +722,19 @@ header .follow a:hover {
 
     .clouds {
         height: 300%;
+    }
+
+    .popup {
+        width: 50rem;
+    }
+
+    .popup .tick {
+        left: 21rem;
+        top: -5rem;
+    }
+
+    .popup .btn {
+        width: 44rem;
     }
 
 }
